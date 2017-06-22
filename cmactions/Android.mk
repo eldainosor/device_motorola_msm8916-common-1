@@ -1,4 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
+
+# exclude harpia from CMActions
+ifneq ($(filter lux merlin osprey surnia, $(TARGET_DEVICE)),)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
@@ -19,6 +22,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
+    $(LOCAL_PATH)/../../../../packages/resources/devicesettings/res \
     frameworks/support/v14/preference/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/preference/res \
@@ -35,5 +39,6 @@ endif
 include frameworks/base/packages/SettingsLib/common.mk
 
 include $(BUILD_PACKAGE)
+endif
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
