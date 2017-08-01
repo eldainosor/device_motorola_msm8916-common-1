@@ -133,6 +133,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     gps.msm8916
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
