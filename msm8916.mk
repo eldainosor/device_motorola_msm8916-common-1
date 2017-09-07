@@ -88,7 +88,7 @@ PRODUCT_PACKAGES += \
     libbson \
     libc_util \
     libshims_camera \
-    Snap
+    libshims_sensorlistener
 
 # CMActions
 PRODUCT_PACKAGES += \
